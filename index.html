@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CineVerse</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="navbar">
+  <a class="logo" href="#home">FLICKSTREAM</a>
+  <nav>
+    <button data-view="home">Home</button>
+    <button data-view="movies">Movies</button>
+    <button data-view="tv">TV Shows</button>
+    <button data-view="watchlist">My List</button>
+  </nav>
+  <div class="search-shell"><form id="searchForm" autocomplete="off"><input id="searchInput" placeholder="Search movies and TV..." aria-label="Search movies and TV shows" /><button>Search</button></form><div id="searchSuggestions" class="search-suggestions hidden" role="listbox"></div></div>
+</header>
+<main id="app">
+  <section id="hero" class="hero">
+    <button id="heroPrev" class="hero-arrow hero-prev" aria-label="Previous featured title">❮</button>
+    <div class="hero-content">
+      <span id="heroType"></span>
+      <h1 id="heroTitle">Loading…</h1>
+      <p id="heroOverview"></p>
+      <div><button id="heroPlay" class="primary">▶ Play</button><button id="heroInfo">More Info</button></div>
+    </div>
+    <button id="heroNext" class="hero-arrow hero-next" aria-label="Next featured title">❯</button>
+    <div id="heroDots" class="hero-dots" aria-label="Featured titles"></div>
+  </section>
+  <div id="content"></div>
+</main>
+<div id="modal" class="modal hidden"><div class="backdrop" data-close></div><div class="modal-card"><button class="close" data-close>×</button><div id="modalBody"></div></div></div>
+<script src="config.js"></script><script src="app.js"></script>
+</body>
+</html>
