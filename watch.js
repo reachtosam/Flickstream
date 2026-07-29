@@ -8,8 +8,6 @@ const expectedTitle = params.get("title") || "";
 
 const player = document.getElementById("player");
 const message = document.getElementById("message");
-const subtitleHelp = document.getElementById("subtitleHelp");
-const subtitleStatus = document.getElementById("subtitleStatus");
 
 async function tmdb(path) {
   const url = new URL(CONFIG.TMDB_BASE_URL + path);
@@ -182,12 +180,6 @@ window.addEventListener("message", (event) => {
     })
   );
 });
-
-subtitleHelp.addEventListener("click", () => {
-  subtitleStatus.textContent =
-    "Use the CC or subtitles control inside the Vidking player. " +
-    "Available subtitle tracks depend on the selected source.";
-  subtitleStatus.classList.remove("error");
 });
 
 validateAndPlay();
