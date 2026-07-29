@@ -1,4 +1,4 @@
-# FlickStream — Vidking Carousel Version
+# FlickStream
 
 ## Setup
 1. Open this folder in VS Code.
