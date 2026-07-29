@@ -93,7 +93,7 @@ async function validateAndPlay() {
 
     if (kind === "movie") {
       const movie = await tmdb(`/movie/${id}`);
-      document.title = `Watch ${movie.title} | CineVerse`;
+      document.title = `Watch ${movie.title} | FlickStream`;
       verifiedText = `Verified ${movie.title} — TMDB ID ${id}.`;
     } else {
       const [show, episodeData] = await Promise.all([
@@ -101,7 +101,7 @@ async function validateAndPlay() {
         tmdb(`/tv/${id}/season/${season}/episode/${episode}`),
       ]);
 
-      document.title = `Watch ${show.name} S${season}E${episode} | CineVerse`;
+      document.title = `Watch ${show.name} S${season}E${episode} | FlickStream`;
       verifiedText =
         `Verified ${show.name} — Season ${season}, ` +
         `Episode ${episode}: ${episodeData.name}.`;
