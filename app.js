@@ -174,7 +174,7 @@ function setHero(item) {
     hero.style.backgroundImage = `url(${CONFIG.TMDB_BACKDROP_URL + item.backdrop_path})`;
   }
   $("#heroTitle").textContent = getTitle(item);
-  $("#heroOverview").textContent = item.overview || "Discover this title on CineVerse.";
+  $("#heroOverview").textContent = item.overview || "Discover this title on FlickStream.";
   $("#heroType").textContent = getType(item) === "tv" ? "FEATURED TV SERIES" : "FEATURED MOVIE";
   renderHeroDots();
 }
@@ -284,18 +284,18 @@ async function search(query) {
 function watchlist() {
   hero.style.display = "none";
   content.innerHTML = "";
-  const items = JSON.parse(localStorage.getItem("cineverse-watchlist") || "[]");
+  const items = JSON.parse(localStorage.getItem("Flickstream-watchlist") || "[]");
   items.length
     ? renderSection("My List", items)
     : showMessage("Your watchlist is empty.");
 }
 
 function toggleList(item) {
-  const items = JSON.parse(localStorage.getItem("cineverse-watchlist") || "[]");
+  const items = JSON.parse(localStorage.getItem("Flickstream-watchlist") || "[]");
   const index = items.findIndex((x) => x.id === item.id && getType(x) === getType(item));
   if (index >= 0) items.splice(index, 1);
   else items.push(item);
-  localStorage.setItem("cineverse-watchlist", JSON.stringify(items));
+  localStorage.setItem("Flickstream-watchlist", JSON.stringify(items));
   return index < 0;
 }
 
