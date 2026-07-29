@@ -1,4 +1,4 @@
-# CineVerse — Vidking Carousel Version
+# FlickStream — Vidking Carousel Version
 
 ## Setup
 1. Open this folder in VS Code.
